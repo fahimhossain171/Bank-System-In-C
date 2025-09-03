@@ -548,6 +548,10 @@ void update_user()
                 printf("Enter new PIN: ");
                 scanf("%d",&upd.pin);
                 fprintf(new,"%d\t\t%s %s\t\t%d\t\t%d\t\t%s\t\t%lld\t\t%s\t\t%d\n",add.acc,add.frist_name,add.last_name,upd.pin,add.age,add.dob,add.phone,add.address,add.money);
+                FILE *f;
+                f=fopen("useracc.txt","a+");
+                fprintf(f,"%d %d\n",add.acc,upd.pin);
+                fclose(f);
                 
                 break;
 
